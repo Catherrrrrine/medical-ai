@@ -143,9 +143,9 @@ npm start
 
 ---
 
-## 运行录屏
+## 运行截图
+<img width="1548" height="1634" alt="image" src="https://github.com/user-attachments/assets/4e52a495-0c6c-43b8-b145-13f8aeef53f4" />
 
-https://drive.google.com/file/d/1HbeaVOmxbsEx1ktZlnpxWI_gjiqN7pkx/view?usp=sharing
 
 ---
 
