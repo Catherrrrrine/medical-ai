@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 项目概述
+## 项目概述
 
 | 项目属性 | 内容 |
 |---------|------|
@@ -15,7 +15,7 @@
 
 ---
 
-## 🏗️ 技术架构
+## 技术架构
 
 ```
 用户输入症状
@@ -44,7 +44,7 @@ Anthropic Claude API (claude-sonnet-4-20250514)
 
 ---
 
-## 🚀 启动方式
+## 启动方式
 
 ### 方式一：Claude Artifact（推荐，零部署）
 1. 打开 [claude.ai](https://claude.ai)
@@ -68,7 +68,7 @@ npm install
 npm run dev
 ```
 
-> ⚠️ 注意：Anthropic API 密钥由 Claude.ai 平台自动注入，本地开发需要配置 API Key（见下方说明）
+> 注意：Anthropic API 密钥由 Claude.ai 平台自动注入，本地开发需要配置 API Key（见下方说明）
 
 ### 本地配置 API Key
 ```bash
@@ -78,7 +78,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ---
 
-## 📊 AI 输出结构
+## AI 输出结构
 
 ```json
 {
@@ -106,7 +106,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ---
 
-## 🧪 测试样例
+## 测试样例
 
 ### 样例 1：感冒发烧
 **输入：** `头痛，体温38.5度，流鼻涕，咽喉疼痛，全身无力，持续3小时`
@@ -134,7 +134,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ---
 
-## 🔧 排错记录
+## 排错记录
 
 ### 问题：JSON 解析失败
 **现象：** `SyntaxError: Unexpected token` 错误
@@ -148,7 +148,7 @@ const parsed = JSON.parse(clean);
 
 ---
 
-## 📈 下一步验证方式
+## 下一步验证方式
 
 1. **用户测试**：招募 10 名目标用户（有过"不知道挂什么科"经历），收集 NPS 和准确度评分
 2. **准确率验证**：与执业医师对比 AI 分析结果，记录误差率
@@ -157,7 +157,7 @@ const parsed = JSON.parse(clean);
 
 ---
 
-## 📁 关键文件说明
+## 关键文件说明
 
 | 文件 | 说明 |
 |------|------|
@@ -166,7 +166,7 @@ const parsed = JSON.parse(clean);
 
 ---
 
-## 🤝 AI 协作说明
+## AI 协作说明
 
 本项目使用 Claude AI 辅助完成：
 - **需求拆解**：Claude 帮助梳理产品定位、痛点和技术方案
@@ -177,4 +177,4 @@ const parsed = JSON.parse(clean);
 
 ---
 
-*⚕️ 本项目为技术演示 MVP，不提供真实医疗服务。任何健康问题请咨询专业医生。*
+*本项目为技术演示 MVP，不提供真实医疗服务。任何健康问题请咨询专业医生。*
