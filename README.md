@@ -46,35 +46,41 @@ Anthropic Claude API (claude-sonnet-4-20250514)
 
 ## 启动方式
 
-### 方式一：Claude Artifact（推荐，零部署）
-1. 打开 [claude.ai](https://claude.ai)
-2. 将 `MedicalAI_MVP.jsx` 的全部代码粘贴给 Claude，要求"运行这个 React 组件"
-3. Artifact 会直接在右侧渲染，无需部署
+### 本地运行（当前可用，无需 API Key）
 
-### 方式二：本地 Create React App
-```bash
-npx create-react-app medical-ai
-cd medical-ai
-# 将 MedicalAI_MVP.jsx 替换 src/App.jsx
-npm start
-```
+需要同时启动前端和后端两个服务。
 
-### 方式三：Vite + React
+**第一步：启动后端（新开一个终端）**
+
 ```bash
-npm create vite@latest medical-ai -- --template react
-cd medical-ai
+cd server
 npm install
-# 将 MedicalAI_MVP.jsx 替换 src/App.jsx
-npm run dev
+node index.js
+# 看到 ✅ 后端启动：http://localhost:3001 即成功
 ```
 
-> 注意：Anthropic API 密钥由 Claude.ai 平台自动注入，本地开发需要配置 API Key（见下方说明）
+**第二步：启动前端（再开一个终端）**
 
-### 本地配置 API Key
 ```bash
-# .env 文件
-REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
+npm install
+npm start
+# 浏览器自动打开 http://localhost:3000
 ```
+
+当前版本使用 Mock 数据，无需 API Key，启动即可使用。
+
+---
+
+### 关于 Claude Artifact 运行
+
+直接在Claude中粘贴代码运行会报 `Failed to fetch` 错误，原因是浏览器安全限制不允许前端直接调用外部 API，需要本地后端服务器中转才能正常运行。
+
+---
+
+### 接入真实 AI（可选）
+
+在 `server/index.js` 里替换 Mock 逻辑为真实 API 调用，支持：
+- **Anthropic Claude API**：在 [console.anthropic.com](https://console.anthropic.com) 获取 Key
 
 ---
 
