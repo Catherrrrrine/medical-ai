@@ -145,7 +145,7 @@ npm start
 
 ## 运行截图
 <img width="1548" height="1634" alt="image" src="https://github.com/user-attachments/assets/4e52a495-0c6c-43b8-b145-13f8aeef53f4" />
-
+<img width="1468" height="1624" alt="image" src="https://github.com/user-attachments/assets/a8e30f53-2b97-469a-b0e5-01d8d9660d0a" />
 
 ---
 
