@@ -136,15 +136,13 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ## 排错记录
 
-### 问题：JSON 解析失败
-**现象：** `SyntaxError: Unexpected token` 错误
-**原因：** Claude API 有时会在 JSON 外包裹 markdown 代码块（```json ... ```）
-**解决方案：**
-```javascript
-const clean = text.replace(/```json|```/g, "").trim();
-const parsed = JSON.parse(clean);
-```
-**教训：** 即使系统提示里说"只返回JSON"，也要做 markdown 清理兜底
+### 问题：前端报 Failed to fetch
+**原因：** 浏览器不允许直接调用 Anthropic API（跨域限制）
+**解决方案：** 增加 Node.js 后端服务器做中转，前端改为调用 localhost:3001
+
+### 问题：后端返回 Unexpected end of JSON input  
+**原因：** API 返回内容为空或格式不符
+**解决方案：** 改用 Mock 数据保证链路跑通，README 说明替代方案
 
 ---
 
@@ -174,6 +172,18 @@ const parsed = JSON.parse(clean);
 - **代码生成**：React 组件由 Claude 生成，包含错误处理和免责声明
 - **架构图**：由 Claude 生成 SVG 架构说明图
 - **排错**：JSON 解析问题由 Claude 定位并修复
+
+---
+
+## 运行说明与限制
+
+本项目需要 AI API 才能运行完整功能。由于 Anthropic API 需要付费账号，
+当前版本使用 Mock 数据模拟 AI 返回结果，用于演示核心交互链路。
+
+替代方案：
+- Mock 模式：当前默认模式，无需 API Key，直接运行
+- Dify 模式：在 cloud.dify.ai 配置同款 System Prompt 可免费体验真实 AI 响应
+- 付费模式：在 .env 文件配置 ANTHROPIC_API_KEY 即可接入真实 Claude API
 
 ---
 
