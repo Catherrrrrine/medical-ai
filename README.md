@@ -143,6 +143,12 @@ npm start
 
 ---
 
+## 运行录屏
+
+https://drive.google.com/file/d/1HbeaVOmxbsEx1ktZlnpxWI_gjiqN7pkx/view?usp=sharing
+
+---
+
 ## 排错记录
 
 **问题1**: 前端报 Failed to fetch
@@ -181,12 +187,36 @@ npm start
 
 ## AI 协作说明
 
-本项目使用 Claude AI 辅助完成：
-- **需求拆解**：Claude 帮助梳理产品定位、痛点和技术方案
-- **系统提示词设计**：Claude 帮助设计医疗场景的 System Prompt，确保输出格式和安全性
-- **代码生成**：React 组件由 Claude 生成，包含错误处理和免责声明
-- **架构图**：由 Claude 生成 SVG 架构说明图
-- **排错**：JSON 解析问题由 Claude 定位并修复
+本项目全程使用 Claude AI 辅助完成，以下是实际协作过程：
+
+### 需求拆解
+提出"医疗评估系统"的模糊想法后，明确目标用户，核心痛点和 MVP 边界，
+claude帮助确定产品不做真实诊断、只做症状参考分析的定位，并以免责声明作为解决
+"准确性"痛点的方案。
+
+### 代码生成
+由 Claude 生成初始 React 组件和 Node.js 后端代码，
+自己判断哪些部分需要保留（UI 结构、免责声明逻辑），
+哪些需要根据实际情况修改（API 调用方式、结果解析逻辑）。
+
+### 调试与排错
+遇到以下问题时向 Claude 描述报错信息，判断方案是否可行再执行：
+- `Failed to fetch`：Claude 指出是浏览器跨域限制，
+  采纳了增加后端服务器中转的方案
+- `Unexpected end of JSON input`：Claude 指出是 JSON 解析失败，
+  采纳了清理 markdown 代码块的解决方案
+- API 付费问题：尝试了 Dify、Groq等多个免费方案，
+  最终判断 Mock 数据是当前阶段最稳定的方案
+
+### 工程判断
+AI 给出方案后自己做了以下判断：
+- Dify 因免费额度限流放弃
+- 最终选择 Mock 数据跑通核心链路，README 说明替代方案，
+  符合作业"先跑通核心链路"的要求
+
+### README 整理
+由 Claude 生成 README 框架，自己根据实际运行情况修改启动方式、
+补充真实排错记录，删除无法实际运行的方式。
 
 ---
 
