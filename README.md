@@ -136,9 +136,9 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ## 排错记录
 
-**问题**: 前端报 Failed to fetch
-**原因**: 浏览器不允许直接调用 Anthropic API（跨域限制）
-**解决方案**: 增加 Node.js 后端服务器做中转，前端改为调用 localhost:3001
+问题: 前端报 Failed to fetch
+原因: 浏览器不允许直接调用 Anthropic API（跨域限制）
+解决方案: 增加 Node.js 后端服务器做中转，前端改为调用 localhost:3001
 
 **问题**: 后端返回 Unexpected end of JSON input  
 **原因**: API 返回内容为空或格式不符
