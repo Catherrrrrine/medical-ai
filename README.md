@@ -197,9 +197,5 @@ npm start
 
 替代方案：
 - Mock 模式：当前默认模式，无需 API Key，直接运行
-- Dify 模式：在 cloud.dify.ai 配置同款 System Prompt 可免费体验真实 AI 响应
 - 付费模式：在 .env 文件配置 ANTHROPIC_API_KEY 即可接入真实 Claude API
 
----
-
-*本项目为技术演示 MVP，不提供真实医疗服务。任何健康问题请咨询专业医生。*
