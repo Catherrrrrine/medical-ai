@@ -110,6 +110,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ### 样例 1：感冒发烧
 **输入：** `头痛，体温38.5度，流鼻涕，咽喉疼痛，全身无力，持续3小时`
+
 **预期输出：**
 - 严重程度：中度
 - 可能病症：上呼吸道感染、流感
@@ -118,6 +119,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ### 样例 2：腹部剧痛
 **输入：** `右下腹剧烈疼痛，按压更痛，恶心，低烧37.8度，昨天开始逐渐加剧`
+
 **预期输出：**
 - 严重程度：重度
 - 可能病症：阑尾炎（高概率）
@@ -126,6 +128,7 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ### 样例 3：皮肤过敏
 **输入：** `手臂颈部红色皮疹，很痒，换了新洗衣液后出现，慢慢扩散`
+
 **预期输出：**
 - 严重程度：轻度
 - 可能病症：接触性皮炎
@@ -136,13 +139,19 @@ REACT_APP_ANTHROPIC_API_KEY=your_api_key_here
 
 ## 排错记录
 
-问题: 前端报 Failed to fetch
-原因: 浏览器不允许直接调用 Anthropic API（跨域限制）
-解决方案: 增加 Node.js 后端服务器做中转，前端改为调用 localhost:3001
+**问题1**: 前端报 Failed to fetch
 
-**问题**: 后端返回 Unexpected end of JSON input  
+**原因**: 浏览器不允许直接调用 Anthropic API（跨域限制）
+
+**解决方案**: 增加 Node.js 后端服务器做中转，前端改为调用 localhost:3001
+
+
+**问题2**: 后端返回 Unexpected end of JSON input  
+
 **原因**: API 返回内容为空或格式不符
+
 **解决方案**: 改用 Mock 数据保证链路跑通，README 说明替代方案
+
 
 ---
 
